@@ -1,0 +1,113 @@
+$icons: (0:0)
+$icons: map-merge($icons,(border: (X: -657px, Y:-372px, W: 64px, H: 74px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(codedby: (X: -773px, Y:-362px, W: 47px, H: 5px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(coderiver: (X: -865px, Y:-345px, W: 49px, H: 5px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(end-border: (X: 0px, Y:-248px, W: 288px, H: 317px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(feature1: (X: -865px, Y:-256px, W: 46px, H: 24px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(feature2: (X: -865px, Y:-284px, W: 27px, H: 27px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(feature3: (X: -725px, Y:-372px, W: 26px, H: 26px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(feature4: (X: -865px, Y:-315px, W: 26px, H: 26px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(pdf: (X: -773px, Y:-256px, W: 88px, H: 102px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(place-a: (X: -755px, Y:-372px, W: 26px, H: 7px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(place-b: (X: -785px, Y:-372px, W: 26px, H: 7px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(place-border: (X: -429px, Y:0px, W: 224px, H: 296px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(prize1: (X: 0px, Y:0px, W: 425px, H: 244px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(prize2: (X: -657px, Y:-128px, W: 259px, H: 124px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(prize3: (X: -657px, Y:0px, W: 259px, H: 124px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(video: (X: -657px, Y:-256px, W: 112px, H: 112px, TW: 916px, TH: 565px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+
+@mixin s($i)
+	+sprite($i)
+
+.icon-border
+	width: 64px
+	height: 74px
+	background-image: url('../img/icons.png')
+	background-position: -657px -372px
+.icon-codedby
+	width: 47px
+	height: 5px
+	background-image: url('../img/icons.png')
+	background-position: -773px -362px
+.icon-coderiver
+	width: 49px
+	height: 5px
+	background-image: url('../img/icons.png')
+	background-position: -865px -345px
+.icon-end-border
+	width: 288px
+	height: 317px
+	background-image: url('../img/icons.png')
+	background-position: 0px -248px
+.icon-feature1
+	width: 46px
+	height: 24px
+	background-image: url('../img/icons.png')
+	background-position: -865px -256px
+.icon-feature2
+	width: 27px
+	height: 27px
+	background-image: url('../img/icons.png')
+	background-position: -865px -284px
+.icon-feature3
+	width: 26px
+	height: 26px
+	background-image: url('../img/icons.png')
+	background-position: -725px -372px
+.icon-feature4
+	width: 26px
+	height: 26px
+	background-image: url('../img/icons.png')
+	background-position: -865px -315px
+.icon-pdf
+	width: 88px
+	height: 102px
+	background-image: url('../img/icons.png')
+	background-position: -773px -256px
+.icon-place-a
+	width: 26px
+	height: 7px
+	background-image: url('../img/icons.png')
+	background-position: -755px -372px
+.icon-place-b
+	width: 26px
+	height: 7px
+	background-image: url('../img/icons.png')
+	background-position: -785px -372px
+.icon-place-border
+	width: 224px
+	height: 296px
+	background-image: url('../img/icons.png')
+	background-position: -429px 0px
+.icon-prize1
+	width: 425px
+	height: 244px
+	background-image: url('../img/icons.png')
+	background-position: 0px 0px
+.icon-prize2
+	width: 259px
+	height: 124px
+	background-image: url('../img/icons.png')
+	background-position: -657px -128px
+.icon-prize3
+	width: 259px
+	height: 124px
+	background-image: url('../img/icons.png')
+	background-position: -657px 0px
+.icon-video
+	width: 112px
+	height: 112px
+	background-image: url('../img/icons.png')
+	background-position: -657px -256px
