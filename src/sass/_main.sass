@@ -266,6 +266,7 @@
 			color: #00C6FF 
 			
 .present
+	position: relative
 	.present__title
 		padding-bottom: 25px
 		color: #FFF
@@ -274,15 +275,68 @@
 		+pt
 
 .gift
+	position: relative
 	display: inline-block
 	vertical-align: top
 	margin: 0 15px
+	&:hover
+		.gift__hover
+			display: block
+			position: absolute
+			top: -25px
+			left: 50%
+			margin-left: -115px
+			border: 5px solid #FFF
+			border-bottom: none
+			padding: 5px
+			z-index: 9
+			&:before, &:after
+				content: ""
+				position: absolute
+				bottom: -34px
+				display: block
+				width: 133px
+				height: 5px
+				background: #FFF 
+			&:before
+				left: -13px
+				transform: rotate(30deg)
+			&:after
+				right: -13px
+				transform: rotate(-30deg)
+			.gift__wrap
+				position: relative
+				width: 210px
+				padding: 15px 20px 0px
+				background: #FFF 
+				&:after
+					content: ""
+					position: absolute
+					bottom: -60px
+					left: 0
+					right: 0
+					+arr(210, 60, #FFF, b) 
+			.gift__title
+				a
+					color: #000
+					border: none
 	.gift__icon
 		margin-bottom: 10px
 		img
 			width: 40px
 			height: auto
 			border-radius: 5px
+	.gift__hover
+		display: none
+		p
+			padding: 5px 0
+			color: #737373
+			font-size: 14px
+			+pt 
+	.gift__attr
+		padding: 10px 0
+	.gift__info
+		text-align: left
 			
 .unique
 	.unique__icon

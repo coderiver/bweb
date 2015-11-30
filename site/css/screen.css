@@ -187,11 +187,23 @@ a { text-decoration: none; }
 .nickname.nickname_blue i { background-color: #00C5FF; }
 .nickname.nickname_blue span { color: #00C6FF; }
 
+.present { position: relative; }
 .present .present__title { padding-bottom: 25px; color: #FFF; font-size: 18px; font-weight: bold; font-family: "PT Sans", sans-serif; }
 
-.gift { display: inline-block; vertical-align: top; margin: 0 15px; }
+.gift { position: relative; display: inline-block; vertical-align: top; margin: 0 15px; }
+.gift:hover .gift__hover { display: block; position: absolute; top: -25px; left: 50%; margin-left: -115px; border: 5px solid #FFF; border-bottom: none; padding: 5px; z-index: 9; }
+.gift:hover .gift__hover:before, .gift:hover .gift__hover:after { content: ""; position: absolute; bottom: -34px; display: block; width: 133px; height: 5px; background: #FFF; }
+.gift:hover .gift__hover:before { left: -13px; -webkit-transform: rotate(30deg); -ms-transform: rotate(30deg); transform: rotate(30deg); }
+.gift:hover .gift__hover:after { right: -13px; -webkit-transform: rotate(-30deg); -ms-transform: rotate(-30deg); transform: rotate(-30deg); }
+.gift:hover .gift__hover .gift__wrap { position: relative; width: 210px; padding: 15px 20px 0px; background: #FFF; }
+.gift:hover .gift__hover .gift__wrap:after { content: ""; position: absolute; bottom: -60px; left: 0; right: 0; width: 0px; height: 0px; border-style: solid; border-width: 60px 105px 0 105px; border-color: #FFF transparent transparent transparent; }
+.gift:hover .gift__hover .gift__title a { color: #000; border: none; }
 .gift .gift__icon { margin-bottom: 10px; }
 .gift .gift__icon img { width: 40px; height: auto; border-radius: 5px; }
+.gift .gift__hover { display: none; }
+.gift .gift__hover p { padding: 5px 0; color: #737373; font-size: 14px; font-family: "PT Sans", sans-serif; }
+.gift .gift__attr { padding: 10px 0; }
+.gift .gift__info { text-align: left; }
 
 .unique .unique__icon { display: inline-block; vertical-align: top; margin: 10px 10px 0 0; }
 .unique .unique__icon img { width: 40px; height: auto; border-radius: 5px; }
